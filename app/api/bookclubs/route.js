@@ -1,0 +1,1 @@
+// rest api routes for get and post bookclubs
