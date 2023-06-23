@@ -31,8 +31,8 @@ model Bookclub {
   meetingDay  DateTime? @db.Date
   nextMeeting DateTime?
   image       String?
-  
- 
+  book        Book      @relation(fields: [bookId], references: [id])
+  bookId      Int
 }
 
 model Book {
@@ -41,5 +41,5 @@ model Book {
   title      String
   coverImage String
   subject    String
-  
+  bookclubs Bookclub[]
 }
