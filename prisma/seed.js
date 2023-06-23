@@ -4,20 +4,28 @@ const prisma = new PrismaClient()
 
 const userData = [
   {
-    name: 'Alice',
+    firstName: 'Alice',
+    lastName: 'Doe',
     email: 'alice@prisma.io',
-    password: 'password'
-
+    username: 'alicedoe',
+    password: 'password',
+    
   },
   {
-    name: 'Nilu',
+    firstName: 'Nilu',
+    lastName: 'Doe',
     email: 'nilu@prisma.io',
-    password: 'password'
+    username: 'niludoe',
+    password: 'password',
+    
   },
   {
-    name: 'Mahmoud',
+    firstName: 'Mahmoud',
+    lastName: 'Doe',
     email: 'mahmoud@prisma.io',
-    password: 'password'
+    username: 'mahmouddoe',
+    password: 'password',
+   
   },
 ]
 

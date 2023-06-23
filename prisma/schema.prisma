@@ -14,7 +14,18 @@ datasource db {
 
 model User {
   id      Int      @id @default(autoincrement())
-  name    String?  @db.VarChar(255)
+  firstName    String  @db.VarChar(255)
+  lastName   String?   @db.VarChar(255)
   email   String   @unique @db.VarChar(255)
-  password String
+  username  String    @db.VarChar(255)
+  password  String  
+  birthday  DateTime? @db.Date
+  createdAt     DateTime  @default(now()) @map(name: "created_at")
+  updatedAt     DateTime  @updatedAt @map(name: "updated_at")
+}
+
+model Bookclub {
+  id Int @id @default(autoincrement())
+  name String 
+  
 }
