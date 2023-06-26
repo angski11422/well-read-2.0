@@ -1,0 +1,10 @@
+@import 'mixins';
+
+
+.grid {
+
+    @include desktop() {
+        width: 100%;
+        flex-direction: column;
+    }
+}
