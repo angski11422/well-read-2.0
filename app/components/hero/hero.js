@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 
 import styles from  './hero.module.scss'
 
@@ -13,7 +14,9 @@ export default function Hero() {
                 </button>
             </form>
             <div className={styles.actions}>
-                <button>Join Now</button>
+                <Link href='/bookclubs'>
+                    <button>Join Now</button>
+                </Link>
             </div>
         </section>
     )
