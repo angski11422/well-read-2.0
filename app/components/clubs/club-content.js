@@ -7,12 +7,12 @@ import styles from './club-content.module.scss';
 
 export default function ClubContent(props) {
     
-    const {bookclub} = props;
+    const { bookclub } = props;
 
     return (
         <Fragment>
             <article className={styles.content}>
-                <ClubMain bookclub={bookclub} />
+                <ClubMain bookclub={bookclub}/>
                 <h4>{bookclub.location}</h4>
                 <h5>{bookclub.genre}</h5>
                 <p>{bookclub.description}</p>
