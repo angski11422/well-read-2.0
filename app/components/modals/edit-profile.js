@@ -6,7 +6,7 @@ import { IoClose } from 'react-icons/io5'
 
 
 
-export default function editProfileModal() {
+export default function EditProfileModal() {
     return (
         <Dialog.Root>
             <Dialog.Trigger asChild>

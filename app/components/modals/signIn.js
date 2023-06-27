@@ -3,15 +3,20 @@
 import * as Dialog from '@radix-ui/react-dialog';
 import styles from './modal.module.scss';
 import { IoClose } from 'react-icons/io5';
+import RegisterModal from './register';
+import { useState } from 'react';
 
 
 
-export default function signInModal() {
+export default function SignInModal() {
+    const [registerModal, setRegisterModal] = useState(false)
+    
     return (
         <Dialog.Root>
             <Dialog.Trigger asChild>
                 <button className={styles.button}>Sign In</button>
             </Dialog.Trigger>
+            {!registerModal ?
             <Dialog.Portal>
                 <Dialog.Overlay className={styles.overlay}/>
                 <Dialog.Content className={styles.content}>
@@ -29,9 +34,12 @@ export default function signInModal() {
                     <Dialog.Close asChild>
                         <button className={styles.button__icon}><IoClose /></button>
                     </Dialog.Close>
-                    
+                    <h5>Don't have an account?</h5>
+                    <button onClick={() => setRegisterModal(true)} className={styles.button}>Sign Up Now</button>
                 </Dialog.Content>
-            </Dialog.Portal>
+            </Dialog.Portal> :
+            <RegisterModal setRegisterModal={setRegisterModal}/>
+            }
         </Dialog.Root>
     )
 }

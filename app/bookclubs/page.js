@@ -12,6 +12,7 @@ export default async function AllClubsPage() {
     return (
         <Fragment>
             <AllClubs bookclubs={bookclubs}/>
+            <h5>Don't see what you're looking for?</h5>
             <CreateClubModal />
         </Fragment>
 
