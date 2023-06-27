@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 import styles from  './hero.module.scss'
+import { IoSearchOutline } from 'react-icons/io5'
 
 export default function Hero() {
     return (
@@ -10,7 +11,7 @@ export default function Hero() {
             <form action="/" className={styles.search}>
                 <input type="text" className={styles.search__input} placeholder="Search available clubs" />
                 <button className={styles.search__button}>
-                    <Image src={"/images/site/sprites/magnifying-glass.svg"} alt='search' className={styles.search__icon} width={25} height={25}/>
+                    <IoSearchOutline className={styles.search__icon} />
                 </button>
             </form>
             <div className={styles.actions}>

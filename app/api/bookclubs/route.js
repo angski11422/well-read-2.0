@@ -2,10 +2,7 @@
 import prisma from '../../../lib/prisma';
 import { NextResponse } from 'next/server'
 
-export async function GET(request) {
-    const bookclubs = await prisma.bookclub.findMany()
-    return NextResponse.json(bookclubs)
-}
+
 
 export async function POST(request) {
     const json = await request.json()

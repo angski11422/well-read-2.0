@@ -15,10 +15,16 @@ export default function RegisterModal(props) {
                     <Dialog.Title className={styles.title}>Sign Up</Dialog.Title>
                     <Dialog.Description className={styles.description}>Create a new profile here.</Dialog.Description>
                     <form className={styles.form}>
-                        <label className={styles.label} htmlFor="username">Username</label>
-                        <input className={styles.input} type="text" name="username" />
+                        <label className={styles.label} htmlFor="email">Email</label>
+                        <input className={styles.input} type="email" name="email" />
                         <label className={styles.label} htmlFor="password">Password</label>
                         <input className={styles.input} type="password" name="password" />
+                        <label className={styles.label} htmlFor="firstName">Name</label>
+                        <input className={styles.input} type="text" name="firstName" />
+                        <label className={styles.label} htmlFor="image">Profile Picture</label>
+                        <input className={styles.input} type="text" name="image" />
+                        <label className={styles.label} htmlFor="username">Username</label>
+                        <input className={styles.input} type="text" name="username" />
                     </form>
                     <Dialog.Close asChild>
                         <button className={styles.button}>Register</button>

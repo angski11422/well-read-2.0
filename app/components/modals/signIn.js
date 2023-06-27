@@ -23,8 +23,8 @@ export default function SignInModal() {
                     <Dialog.Title className={styles.title}>Sign In</Dialog.Title>
                     <Dialog.Description className={styles.description}>Sign into you profile here.</Dialog.Description>
                     <form className={styles.form}>
-                        <label className={styles.label} htmlFor="username">Username</label>
-                        <input className={styles.input} type="text" name="username" />
+                        <label className={styles.label} htmlFor="email">Email</label>
+                        <input className={styles.input} type="text" name="email" />
                         <label className={styles.label} htmlFor="password">Password</label>
                         <input className={styles.input} type="password" name="password" />
                     </form>
