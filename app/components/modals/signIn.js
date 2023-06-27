@@ -1,12 +1,12 @@
 'use client'
 
 import * as Dialog from '@radix-ui/react-dialog';
-import styles from './modal.module.scss'
-import { IoClose } from 'react-icons/io5'
+import styles from './modal.module.scss';
+import { IoClose } from 'react-icons/io5';
 
 
 
-export default function editProfileModal() {
+export default function signInModal() {
     return (
         <Dialog.Root>
             <Dialog.Trigger asChild>

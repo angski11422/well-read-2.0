@@ -1,7 +1,7 @@
 // import Link from 'next/link';
 import styles from './featured-clubs.module.scss';
 import ClubsGrid from '../clubs/clubs-grid';
-import getBookclubs from '../../get-requests/get-bookclubs';
+import getBookclubs from '../../actions/get-bookclubs';
 
 export default async function FeaturedClubs() {
 

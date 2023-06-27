@@ -3,9 +3,11 @@ import Link from 'next/link';
 
 import Logo from './logo';
 import styles from './main-nav.module.scss';
+import UserNav from './user-nav';
 
 
 export default function MainNav() {
+    
     return (
         <header className={styles.header}>
             <Link href='/' >
@@ -14,9 +16,7 @@ export default function MainNav() {
             {/* about us, faq */}
             <div className={styles.usernav}>
                 <div className={styles.usernav__iconbox}>
-                    <Link href='/profile'>
-                        <button className={styles.usernav__button}>Sign In</button>
-                    </Link>
+                    <UserNav />
                 </div>  
             </div>
         </header> 

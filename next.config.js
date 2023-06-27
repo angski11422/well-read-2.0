@@ -17,6 +17,9 @@ const nextConfig = {
             hostname: '**.photos', 
           }
         ],
+      },
+      experimental: {
+        serverComponentsExternalPackages: ['@prisma/client', 'bcrypt']
       }
 }
 

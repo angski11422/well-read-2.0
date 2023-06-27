@@ -1,6 +1,8 @@
 
 import AllClubs from "../components/clubs/all-clubs"
-import getBookclubs from "../get-requests/get-bookclubs"
+import getBookclubs from "../actions/get-bookclubs"
+import { Fragment } from "react"
+import CreateClubModal from "../components/modals/create-club"
 
 export default async function AllClubsPage() {
 
@@ -8,6 +10,10 @@ export default async function AllClubsPage() {
 
 
     return (
-        <AllClubs bookclubs={bookclubs}/>
+        <Fragment>
+            <AllClubs bookclubs={bookclubs}/>
+            <CreateClubModal />
+        </Fragment>
+
     )
 }

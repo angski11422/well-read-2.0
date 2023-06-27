@@ -1,6 +1,6 @@
 
 import ClubContent from "../../components/clubs/club-content"
-import getBookclubsById from "../../get-requests/get-bookclubs-Id"
+import getBookclubsById from "../../actions/get-bookclubs-Id"
 
 
 export default async function ClubPage(id) {

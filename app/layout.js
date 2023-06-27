@@ -3,9 +3,11 @@ import { Nunito } from 'next/font/google'
 
 import './globals.scss'
 import MainNav from './components/main-nav/main-nav'
+// import { Providers } from './providers/providers'
 
 
-const nunito = Nunito({ subsets: ['latin'] })
+
+const font = Nunito({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'Well Read',
@@ -15,11 +17,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={nunito.className}>
-        <div>
-          <MainNav/>
-        </div>
-        {children}
+      <body className={font.className}>
+        {/* <Providers> */}
+          <div>
+            <MainNav/>
+          </div>
+          {children}
+        {/* </Providers> */}
       </body>
     </html>
   )
