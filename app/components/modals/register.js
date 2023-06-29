@@ -19,12 +19,12 @@ export default function RegisterModal(props) {
                         <input className={styles.input} type="email" name="email" />
                         <label className={styles.label} htmlFor="password">Password</label>
                         <input className={styles.input} type="password" name="password" />
-                        <label className={styles.label} htmlFor="firstName">Name</label>
-                        <input className={styles.input} type="text" name="firstName" />
-                        <label className={styles.label} htmlFor="image">Profile Picture</label>
+                        <label className={styles.label} htmlFor="name">Name</label>
+                        <input className={styles.input} type="text" name="name" />
+                        {/* <label className={styles.label} htmlFor="image">Profile Picture</label>
                         <input className={styles.input} type="text" name="image" />
                         <label className={styles.label} htmlFor="username">Username</label>
-                        <input className={styles.input} type="text" name="username" />
+                        <input className={styles.input} type="text" name="username" /> */}
                     </form>
                     <Dialog.Close asChild>
                         <button className={styles.button}>Register</button>

@@ -8,29 +8,20 @@ import prisma from '../../../../lib/prisma';
 
 export const authOptions = {
     adapter: PrismaAdapter(prisma),
-
-    callbacks: {
-        async signIn({ account, profile }) {
-          if (account.provider === "google") {
-            return profile.email_verified && profile.email.endsWith("@gmail.com")
-          }
-          return true // Do different verification for other providers that don't have `email_verified`
-        },
-    },
-
-    session: {
-        strategy: 'jwt'
-    },
-
     providers: [
+        GoogleProvider({
+            clientId: process.env.GOOGLE_CLIENT_ID,
+            clientSecret: process.env.GOOGLE_CLIENT_SECRET
+        }),
         CredentialsProvider({
+            name: 'Email',
             credentials: {
-                username: { label: 'email', type: 'email'},
-                password: { label: 'password', type: 'password'}
+                email: { label: 'Email', type: 'text'},
+                password: { label: 'Password', type: 'password'}
             },
             async authorize(credentials) {
                 if (!credentials?.email || !credentials?.password) {
-                    return null
+                    throw new Error('Please enter an email and password')
                 }
                 const user = await prisma.user.findUnique({
                     where: {
@@ -38,26 +29,37 @@ export const authOptions = {
                     }
                 })
                 if (!user) {
-                    return null
+                    throw new Error('No user found')
                 }
-                const isPasswordValid = await compare(
+                const isPasswordValid = await bcrypt.compare(
                     credentials.password, 
                     user.password
                 )
                 if (!isPasswordValid) {
-                    return null
+                    throw new Error('No user found')
                 }
-                return {
-                    id: user.id + '',
-                    username: user.username
-                }
+                return user
             }
-        }),
-        GoogleProvider({
-            clientId: process.env.GOOGLE_CLIENT_ID,
-            clientSecret: process.env.GOOGLE_CLIENT_SECRET
         })
-    ]
+        
+    ],
+    callbacks: {
+        jwt: async ({ token, user }) => {
+            user && (token.user = user);
+            return token;
+        },
+        session: async ({ session, token }) => {
+            session.user = token.user;
+            return session;
+        }
+    },
+    
+    secret: process.env.NEXTAUTH_SECRET,
+    session: {
+        strategy: 'jwt'
+    },
+
+    
 }
 
 const handler = NextAuth(authOptions)

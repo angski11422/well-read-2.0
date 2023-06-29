@@ -5,6 +5,7 @@ import styles from './modal.module.scss';
 import { IoClose } from 'react-icons/io5';
 import RegisterModal from './register';
 import { useState } from 'react';
+import { signIn } from 'next-auth/react';
 
 
 
@@ -29,7 +30,7 @@ export default function SignInModal() {
                         <input className={styles.input} type="password" name="password" />
                     </form>
                     <Dialog.Close asChild>
-                        <button className={styles.button}>Sign In</button>
+                        <button className={styles.button} >Sign In</button>
                     </Dialog.Close>
                     <Dialog.Close asChild>
                         <button className={styles.button__icon}><IoClose /></button>

@@ -1,10 +1,16 @@
+'use client'
+
 import Image from 'next/image'
 import Link from 'next/link'
 
 import styles from  './hero.module.scss'
 import { IoSearchOutline } from 'react-icons/io5'
 
+
 export default function Hero() {
+   
+
+    
     return (
         <section className={styles.hero}>
             <h1>Discover Your Perfect Book Club: Explore, Join, and Connect!</h1>
@@ -19,6 +25,7 @@ export default function Hero() {
                     <button>Join Now</button>
                 </Link>
             </div>
+
         </section>
     )
 }

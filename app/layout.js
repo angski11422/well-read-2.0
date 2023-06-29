@@ -3,7 +3,8 @@ import { Nunito } from 'next/font/google'
 
 import './globals.scss'
 import MainNav from './components/main-nav/main-nav'
-// import { Providers } from './providers/providers'
+import { Providers }  from './providers/providers'
+import ToasterProvider from './providers/toaster'
 
 
 
@@ -18,12 +19,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={font.className}>
-        {/* <Providers> */}
+        <Providers>
+          <ToasterProvider />
           <div>
             <MainNav/>
           </div>
           {children}
-        {/* </Providers> */}
+        </Providers>
       </body>
     </html>
   )
