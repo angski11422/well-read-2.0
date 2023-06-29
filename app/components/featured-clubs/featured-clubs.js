@@ -10,7 +10,9 @@ export default async function FeaturedClubs() {
     return (
         <section className={styles.featured}>
             <h1>Featured Clubs</h1>
-            <ClubsGrid bookclubs={bookclubs}/> 
+            <div className={styles.grid}>
+                <ClubsGrid bookclubs={bookclubs}/> 
+            </div>
         </section>
     )
 }

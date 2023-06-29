@@ -1,19 +1,8 @@
 .hero {
+    grid-area: header;
     text-align: center;
-}
-
-.actions {
-    margin-top: var(--size-4);
-
-    & button {
-        font-family: inherit;
-        cursor: pointer;
-        border: none;
-        border-radius: 3rem;
-        height: 50%;
-        text-transform: uppercase;
-        padding: 1rem 1.25rem;
-    }
+    
+   
 }
 
 .search {
@@ -25,7 +14,7 @@
     &__input{
         font-family: inherit;
         font-size:  inherit;
-        color: inherit;
+        color: var(--color-grey-800);
         background-color: var(--color-grey-100);
         border: solid var(--color-grey-500);
         padding: .7rem 2rem;
@@ -35,26 +24,26 @@
 
         &:focus {
             outline: none;
-            width: 100%;
-            background-color: var(--color-grey-light-3);
+            width: 25%;
+            background-color: var(--color-grey-100);
+            
         }
 
         &::-webkit-input-placeholder {
             font-weight: 100;
-            color: var(--color-grey-light-4);
+            color: var(--color-grey-700);
         }
     }
 
-    &__input:focus + &__button {
-        background-color: var(--color-grey-light-3);
-    }
 
     &__button{
         border: none;
-        background-color: var(--color-grey-light-2);
+        background-color: var(--color-grey-100);
+       
 
         &:focus {
             outline: none;
+
         }
 
         &:active {
@@ -64,3 +53,17 @@
     }
 }
 
+.actions {
+    margin: 1rem 0 2rem 0;
+
+    & button {
+        font-family: inherit;
+        cursor: pointer;
+        border: none;
+        border-radius: 3rem;
+        height: 50%;
+        text-transform: uppercase;
+        padding: .75rem 1.5rem;
+        background-color: var(--color-grey-100);
+    }
+}

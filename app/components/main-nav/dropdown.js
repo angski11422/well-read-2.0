@@ -1,9 +1,10 @@
 'use client'
 import Link from 'next/link';
-
-import styles from './user-nav.module.scss';
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
 import { IoPerson, IoMenu, IoLibrary, IoBook, IoHome, IoLogOut } from 'react-icons/io5';
+
+import styles from './dropdown.module.scss';
+
 
 export default function Dropdown() {
 
@@ -17,7 +18,7 @@ export default function Dropdown() {
             </DropdownMenu.Trigger>
     
             <DropdownMenu.Portal>
-                <DropdownMenu.Content className={styles.content} sideOffset={5}>
+                <DropdownMenu.Content className={styles.content} >
                     <Link href='/' className={styles.link}>
                         <DropdownMenu.Item className={styles.item}>
                             <div className={styles.icon__left}><IoHome/></div>Home

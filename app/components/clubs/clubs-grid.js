@@ -10,13 +10,16 @@ export default function ClubsGrid(props) {
     const { bookclubs } = props;
 
     const bookclublist = bookclubs.map(bookclub => {
-        return <ClubMain key={bookclub.id} bookclub={bookclub}/>
+        return (
+            <div className={styles.card}>
+                <ClubMain key={bookclub.id} bookclub={bookclub}/>
+            </div>
+        )
     })
 
     return (
-        <ul className={styles.grid}>
-            <h1>List of Clubs</h1>
-           {bookclublist}
-        </ul>
+        <section className={styles.grid}>
+            {bookclublist}
+        </section>
     )
 }

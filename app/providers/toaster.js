@@ -5,7 +5,10 @@ import { Toaster } from 'react-hot-toast'
 const ToasterProvider = () => {
     return (
         <div>
-            <Toaster />
+            <Toaster 
+                position="top-right"
+                reverseOrder={false}
+            />
         </div>
     )
 }
