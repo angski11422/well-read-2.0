@@ -5,7 +5,11 @@
 export default function AboutPage() {
 
     return (
-        <h1> About Well Read </h1>
+        <secion>
+            <h1> About Well Read </h1>
+
+            <p>Created by Angela Palaszewski</p>
+        </secion>
     )
 }
 
