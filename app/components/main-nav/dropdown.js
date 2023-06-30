@@ -29,7 +29,7 @@ export default function Dropdown() {
                             <div className={styles.icon__left}><IoLibrary/></div>All Bookclubs   
                         </DropdownMenu.Item>
                     </Link>
-                    <Link href='/' className={styles.link}>
+                    <Link href='/mybookclubs' className={styles.link}>
                         <DropdownMenu.Item className={styles.item}>
                             <div className={styles.icon__left}><IoBook/></div>My Bookclubs
                         </DropdownMenu.Item>

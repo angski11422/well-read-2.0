@@ -9,7 +9,7 @@ export default async function FeaturedClubs() {
     
     return (
         <section className={styles.featured}>
-            <h1>Featured Clubs</h1>
+            <h1>Featured Bookclubs</h1>
             <div className={styles.grid}>
                 <ClubsGrid bookclubs={bookclubs}/> 
             </div>

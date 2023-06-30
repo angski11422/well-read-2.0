@@ -10,8 +10,8 @@ export default function AllClubs(props) {
     // console.log(bookclubs)
     
     return (
-        <section className={styles.clubs}>
-            <h1>All Clubs</h1>
+        <section className={styles.all} >
+            <h1 className={styles.header}>All Bookclubs</h1>
             <ClubsGrid bookclubs={bookclubs}/>
         </section>
     )

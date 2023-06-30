@@ -3,5 +3,11 @@
 export default function MyBookclubs() {
 
 
-    return <h1> List of my bookclubs </h1>
+    return (
+        <section>
+            <h1> My bookclubs </h1>
+            <h2>Owner</h2>
+            <h2>Member</h2>
+        </section>
+    )
 }

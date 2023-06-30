@@ -16,7 +16,7 @@ export default function Hero() {
             <h1>Discover Your Perfect Book Club: Explore, Join, and Connect!</h1>
             <Image src='/../public/static/images/hero_bookclub.jpg' alt='bookclub image' width={600} height={300} />
             <form action="/" className={styles.search}>
-                <input type="text" className={styles.search__input} placeholder="Search available clubs" />
+                <input type="text" className={styles.search__input} placeholder="Search bookclubs" />
                 <button className={styles.search__button}>
                     <IoSearchOutline className={styles.search__icon} />
                 </button>

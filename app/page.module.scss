@@ -9,3 +9,20 @@
     grid-template-areas: 'sidebar header header header'
                         'sidebar content content content';
 }
+
+
+.clubs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5rem;
+}
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5rem;
+}
