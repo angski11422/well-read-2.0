@@ -5,7 +5,7 @@ import axios from "axios"
 import { toast } from "react-hot-toast"
 import { useRouter } from "next/navigation"
 
-
+import styles from '../../page.module.scss'
 
 export default function RegisterPage() {
   const router = useRouter()
@@ -24,7 +24,7 @@ export default function RegisterPage() {
   }
 
     return (
-      <>
+      <section className={styles.register}>
         <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
             <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
               Register for an account
@@ -96,7 +96,7 @@ export default function RegisterPage() {
             </form>
           </div>
         </div>
-      </>
+      </section>
     )
   }
 

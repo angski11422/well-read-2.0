@@ -21,6 +21,9 @@ export default function MainNav() {
                 <Link href='/faq' className={styles.mainnav__button} >
                     <span>FAQ</span>
                 </Link>
+                <Link href='/register' className={styles.mainnav__button} >
+                    <span>Create Account</span>
+                </Link>
             </div>
             <div className={styles.usernav}>
                 <div className={styles.usernav__iconbox}>
