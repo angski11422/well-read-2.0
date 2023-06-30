@@ -15,7 +15,7 @@ export default function ClubMain(props) {
             <h3 className={styles.title}>{name}</h3>
             <div>
                 {!image ? 
-                <Image src='/../public/images/site/no_image_available.jpg' alt='no image found' width={500} height={300} />:
+                <Image src='/../public/static/images/no_image_available.jpg' alt='no image found' width={500} height={300} />:
                 <Image src={image} alt={name} width={500} height={300} />}
             </div>
         </Link>
