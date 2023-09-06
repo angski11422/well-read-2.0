@@ -16,28 +16,31 @@
 .content {
   min-width: 200px;
   background-color: var(--color-grey-50);
+  border: 2px solid var(--color-grey-700);
   border-radius: 6px;
-  padding: 5px;
+  padding: 20px;
 }
 
 .link {
-  margin-left: 0;
-  padding: 0 .5rem;
   text-decoration: none;
 }
   
 .item {
-  font-size: 17px;
-  line-height: 1;
+  font-size: 20px;
+  line-height: 1.5;
   color: var(--color-primary-500);
   border-radius: 3px;
   display: flex;
   align-items: left;
-  height: 25px;
-  padding: 5px 20px;
+  padding: 20px 20px;
+  cursor: pointer;
 }
   
 .icon__left {
   margin-left: 0;
   padding: 0 .5rem;
+}
+
+.arrow {
+  fill: var(--color-grey-700);
 }
