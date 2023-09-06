@@ -1,33 +1,27 @@
+"use client";
 
-// import { useState } from 'react';
-
-import styles from './user-nav.module.scss';
-import { IoLogIn } from 'react-icons/io5';
-import Link from 'next/link';
-import { getServerSession } from 'next-auth';
-import { authOptions } from '../../api/auth/[...nextauth]/route';
-import Dropdown from './dropdown';
-
-
-
+import styles from "./user-nav.module.scss";
+import { IoLogIn } from "react-icons/io5";
+import { getSession } from "@/actions/getCurrentUser";
+import Dropdown from "./dropdown";
+import * as Dialog from "@radix-ui/react-dialog";
+import SignInModal from "../modals/signIn";
 
 export default async function UserNav() {
-   const session = await getServerSession(authOptions)
-   
-   
-   if (!session) {
+  const session = await getSession();
+
+  if (!session) {
     return (
-        <div className={styles.usernav}>
-            <Link href='/api/auth/signin'>
-                <button>
-                   <IoLogIn className={styles.signin__icon}/>
-                    Sign In
-                </button> 
-            </Link>
-        </div>
-    )
-   }
-   return (
-    <Dropdown />
-   )
+      <Dialog.Root>
+        <Dialog.Trigger asChild>
+          <button>
+            <IoLogIn className={styles.signin__icon} />
+            Sign In
+          </button>
+        </Dialog.Trigger>
+        <SignInModal />
+      </Dialog.Root>
+    );
   }
+  return <Dropdown />;
+}

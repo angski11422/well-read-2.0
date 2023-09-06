@@ -3,20 +3,15 @@
 /* reset */
 .button {
   all: unset;
-}
-
-.usernav {
-
-  & button {
-      font-family: inherit;
+  font-family: inherit;
       cursor: pointer;
       border: none;
       border-radius: 3rem;
       text-transform: uppercase;
       padding: .75rem 1.5rem;
       background-color: var(--color-grey-100);
-  }
 }
+
 
 .signin__icon {
   margin-right: 5px;
