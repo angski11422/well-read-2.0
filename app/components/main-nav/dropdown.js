@@ -1,5 +1,6 @@
 'use client'
 import Link from 'next/link';
+import { signOut } from 'next-auth/react';
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
 import { IoPerson, IoMenu, IoLibrary, IoBook, IoHome, IoLogOut } from 'react-icons/io5';
 
@@ -39,8 +40,8 @@ export default function Dropdown() {
                             <div className={styles.icon__left}><IoPerson/></div>Profile
                         </DropdownMenu.Item>
                     </Link>
-                    <Link href='/api/auth/signout' className={styles.link}>
-                        <DropdownMenu.Item className={styles.item}>
+                    <Link href='/api/auth/signout' className={styles.link} >
+                        <DropdownMenu.Item className={styles.item} >
                             <div className={styles.icon__left}><IoLogOut /></div>Sign Out
                         </DropdownMenu.Item>
                     </Link>
