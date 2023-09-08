@@ -1,19 +1,16 @@
+import { Nunito } from "next/font/google";
 
-import { Nunito } from 'next/font/google'
+import "./globals.scss";
+import MainNav from "./components/main-nav/main-nav";
+import { Providers } from "./providers/providers";
+import ToasterProvider from "./providers/toaster";
 
-import './globals.scss'
-import MainNav from './components/main-nav/main-nav'
-import { Providers }  from './providers/providers'
-import ToasterProvider from './providers/toaster'
-
-
-
-const font = Nunito({ subsets: ['latin'] })
+const font = Nunito({ subsets: ["latin"] });
 
 export const metadata = {
-  title: 'Well Read',
-  description: 'Find your next book club',
-}
+  title: "Well Read",
+  description: "Find your next book club",
+};
 
 export default function RootLayout({ children }) {
   return (
@@ -22,11 +19,11 @@ export default function RootLayout({ children }) {
         <Providers>
           <ToasterProvider />
           <div>
-            <MainNav/>
+            <MainNav />
           </div>
           {children}
         </Providers>
       </body>
     </html>
-  )
+  );
 }

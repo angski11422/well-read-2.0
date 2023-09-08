@@ -15,5 +15,5 @@ export default function ClubsGrid(props) {
     );
   });
 
-  return <section className={styles.grid}>{bookclublist}</section>;
+  return <div className={styles.grid}>{bookclublist}</div>;
 }

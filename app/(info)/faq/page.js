@@ -1,9 +1,3 @@
-
-
-
 export default function FAQPage() {
-
-    return (
-        <h1> Frequently Asked Questions </h1>
-    )
+  return <h1> Frequently Asked Questions </h1>;
 }

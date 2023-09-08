@@ -13,7 +13,7 @@ export const authOptions = {
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
     }),
     CredentialsProvider({
-      name: "Email",
+      name: "credentials",
       credentials: {
         email: { label: "Email", type: "text" },
         password: { label: "Password", type: "password" },
@@ -35,24 +35,15 @@ export const authOptions = {
           user.password
         );
         if (!isPasswordValid) {
-          throw new Error("No user found");
+          throw new Error("Invalid password");
         }
         return user;
       },
     }),
   ],
-  callbacks: {
-    jwt: async ({ token, user }) => {
-      user && (token.user = user);
-      return token;
-    },
-    session: async ({ session, token }) => {
-      session.user = token.user;
-      return session;
-    },
-  },
 
   secret: process.env.NEXTAUTH_SECRET,
+  debug: process.env.NODE_ENV === "development",
   session: {
     strategy: "jwt",
   },

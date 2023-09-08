@@ -5,15 +5,30 @@ import styles from "./modal.module.scss";
 import { IoClose } from "react-icons/io5";
 import { IoLogIn } from "react-icons/io5";
 import { signIn } from "next-auth/react";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
 
 export default function SignInModal() {
+  const router = useRouter();
+  const [data, setData] = useState({
+    email: "",
+    password: "",
+  });
+
+  const signInUser = async (e) => {
+    e.preventDefault();
+    signIn("credentials", {
+      ...data,
+      redirect: false,
+    });
+    router.push("/profile");
+  };
+
   return (
     <Dialog.Root>
       <Dialog.Trigger>
-        <button>
-          <IoLogIn className={styles.signin__icon} />
-          Sign In
-        </button>
+        <IoLogIn className={styles.signin__icon} />
+        Sign In
       </Dialog.Trigger>
       <Dialog.Portal>
         <Dialog.Overlay className={styles.overlay} />
@@ -36,12 +51,12 @@ export default function SignInModal() {
             <button className={styles.button}>Sign In</button>
           </Dialog.Close>
           <Dialog.Close asChild>
-            <button className={styles.button__icon}>
+            <button className={styles.button__icon} onClick={signInUser}>
               <IoClose />
             </button>
           </Dialog.Close>
-          <h5>Don't have an account?</h5>
-          <button className={styles.button}>Sign Up Now</button>
+          {/* <h5>Don't have an account?</h5>
+          <button className={styles.button}>Sign Up Now</button> */}
         </Dialog.Content>
       </Dialog.Portal>
     </Dialog.Root>

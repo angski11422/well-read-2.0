@@ -8,7 +8,7 @@ import { IoSearchOutline } from "react-icons/io5";
 
 export default function Hero() {
   return (
-    <section className={styles.hero}>
+    <div className={styles.hero}>
       <h1>Discover Your Perfect Book Club: Explore, Join, and Connect!</h1>
       <Image
         src="/../public/static/images/hero_bookclub.jpg"
@@ -37,6 +37,6 @@ export default function Hero() {
           <button>Join Now</button>
         </Link>
       </div>
-    </section>
+    </div>
   );
 }

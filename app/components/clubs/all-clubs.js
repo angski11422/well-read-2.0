@@ -8,9 +8,9 @@ export default function AllClubs(props) {
   const { bookclubs } = props;
 
   return (
-    <section className={styles.all}>
+    <div className={styles.all}>
       <h1 className={styles.header}>All Bookclubs</h1>
       <ClubsGrid bookclubs={bookclubs} />
-    </section>
+    </div>
   );
 }
