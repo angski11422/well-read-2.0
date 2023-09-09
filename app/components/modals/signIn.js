@@ -3,10 +3,11 @@
 import * as Dialog from "@radix-ui/react-dialog";
 import styles from "./modal.module.scss";
 import { IoClose } from "react-icons/io5";
-import { IoLogIn } from "react-icons/io5";
+import { IoBookmark } from "react-icons/io5";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { toast } from "react-hot-toast";
 
 export default function SignInModal() {
   const router = useRouter();
@@ -20,14 +21,15 @@ export default function SignInModal() {
     signIn("credentials", {
       ...data,
       redirect: false,
-    });
-    router.push("/profile");
+    }).then(() => toast.success("Welcome Back!"));
+    console.log("Signed In Success");
+    router.push("/");
   };
 
   return (
     <Dialog.Root>
       <Dialog.Trigger>
-        <IoLogIn className={styles.signin__icon} />
+        <IoBookmark className={styles.signin__icon} />
         Sign In
       </Dialog.Trigger>
       <Dialog.Portal>
@@ -37,26 +39,39 @@ export default function SignInModal() {
           <Dialog.Description className={styles.description}>
             Sign into you profile here.
           </Dialog.Description>
-          <form className={styles.form}>
+          <form className={styles.form} onSubmit={signInUser}>
             <label className={styles.label} htmlFor="email">
               Email
             </label>
-            <input className={styles.input} type="text" name="email" />
+            <input
+              className={styles.input}
+              id="email"
+              name="email"
+              type="email"
+              autoComplete="email"
+              value={data.email}
+              onChange={(e) => setData({ ...data, email: e.target.value })}
+            />
             <label className={styles.label} htmlFor="password">
               Password
             </label>
-            <input className={styles.input} type="password" name="password" />
-          </form>
-          <Dialog.Close asChild>
+            <input
+              className={styles.input}
+              id="password"
+              name="password"
+              type="password"
+              autoComplete="current-password"
+              value={data.password}
+              onChange={(e) => setData({ ...data, password: e.target.value })}
+            />
             <button className={styles.button}>Sign In</button>
-          </Dialog.Close>
+          </form>
+
           <Dialog.Close asChild>
-            <button className={styles.button__icon} onClick={signInUser}>
+            <button className={styles.button__icon}>
               <IoClose />
             </button>
           </Dialog.Close>
-          {/* <h5>Don't have an account?</h5>
-          <button className={styles.button}>Sign Up Now</button> */}
         </Dialog.Content>
       </Dialog.Portal>
     </Dialog.Root>
