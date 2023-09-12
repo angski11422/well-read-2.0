@@ -1,15 +1,14 @@
 import { getSession } from "@/actions/getCurrentUser";
 import Dropdown from "./dropdown";
-import SignInModal from "../modals/signIn";
-import RegisterModal from "../modals/register";
+import Link from "next/link";
 
 export default async function UserNav() {
   // const session = await getSession();
 
   return (
     <>
-      <RegisterModal />
-      <SignInModal />
+      <Link href="/register">Sign Up</Link>
+      <Link href="/sign-in">Sign In</Link>
     </>
   );
 }

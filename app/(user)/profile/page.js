@@ -1,4 +1,4 @@
-import EditProfileModal from "../../components/modals/edit-profile";
+import EditProfileModal from "../../components/modal/edit-profile";
 import Image from "next/image";
 import getCurrentUser from "../../actions/getCurrentUser";
 import styles from "../../page.module.scss";

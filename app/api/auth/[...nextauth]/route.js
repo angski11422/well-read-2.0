@@ -6,6 +6,9 @@ import { PrismaAdapter } from "@auth/prisma-adapter";
 import prisma from "../../../../lib/prisma";
 
 export const authOptions = {
+  pages: {
+    signIn: "/",
+  },
   adapter: PrismaAdapter(prisma),
   providers: [
     GoogleProvider({
