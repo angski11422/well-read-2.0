@@ -1,27 +1,35 @@
+"use client";
+
 import EditProfileModal from "../../components/modal/edit-profile";
 import Image from "next/image";
-import getCurrentUser from "../../actions/getCurrentUser";
 import styles from "../../page.module.scss";
+import { useSession } from "next-auth/react";
 
 export default async function ProfilePage() {
-  const user = await getCurrentUser();
+  const { data: session } = await useSession();
 
   return (
     <div className={styles.profile}>
       <h1> Profile Page</h1>
-      {user.image == null && (
+
+      {session.user.image == null && (
         <Image
           src="/../public/static/images/blank_profile_picture.jpg"
-          alt={user.name}
+          alt={session.user.name}
           width={200}
           height={200}
         />
       )}
-      {user.image && (
-        <Image src={user.image} alt={user.name} width={200} height={200} />
+      {session.user.image && (
+        <Image
+          src={session.user.image}
+          alt={session.user.name}
+          width={200}
+          height={200}
+        />
       )}
-      <h2>Welcome {user.name}!</h2>
-      <h5>{user.email}</h5>
+      <h2>Welcome {session.user.name}!</h2>
+      <h5>{session.user.email}</h5>
       <EditProfileModal />
     </div>
   );
