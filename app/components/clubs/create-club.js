@@ -1,6 +1,6 @@
 "use client";
 
-import styles from "@/components/modal/modal.module.scss";
+import styles from "@/components/ui/modal.module.scss";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { toast } from "react-hot-toast";

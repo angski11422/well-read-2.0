@@ -1,7 +1,7 @@
 "use client";
 
 import * as Dialog from "@radix-ui/react-dialog";
-import styles from "@/components/modal/modal.module.scss";
+import styles from "@/components/ui/modal.module.scss";
 import { IoClose } from "react-icons/io5";
 import { IoBook } from "react-icons/io5";
 import { useState } from "react";
