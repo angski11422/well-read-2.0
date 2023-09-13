@@ -6,7 +6,6 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { toast } from "react-hot-toast";
 import Modal from "@/components/ui/Modal";
-import { IoBookmark } from "react-icons/io5";
 
 export default function SignInModal() {
   const router = useRouter();
@@ -27,10 +26,6 @@ export default function SignInModal() {
 
   return (
     <Modal>
-      <Modal.Button>
-        <IoBookmark className={styles.signin__icon} />
-        Sign In
-      </Modal.Button>
       <Modal.Content title="Sign In">
         <form className={styles.form} onSubmit={signInUser}>
           <label className={styles.label} htmlFor="email">
