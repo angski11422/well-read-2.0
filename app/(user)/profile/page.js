@@ -1,6 +1,6 @@
 "use client";
 
-import EditProfileModal from "../../components/modal/edit-profile";
+import EditProfileModal from "../../components/user/edit-profile";
 import Image from "next/image";
 import styles from "../../page.module.scss";
 import { useSession } from "next-auth/react";

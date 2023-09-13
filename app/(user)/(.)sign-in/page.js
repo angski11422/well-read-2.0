@@ -5,7 +5,7 @@ import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { toast } from "react-hot-toast";
-import Modal from "@/components/modal/Modal";
+import Modal from "@/components/ui/Modal";
 import { IoBookmark } from "react-icons/io5";
 
 export default function SignInModal() {

@@ -1,6 +1,6 @@
 import AllClubs from "../components/clubs/all-clubs";
 import getBookclubs from "../actions/get-bookclubs";
-import CreateClubModal from "../components/modal/create-club";
+import CreateClubModal from "@/components/clubs/create-club";
 import styles from "../page.module.scss";
 
 export default async function AllClubsPage() {
