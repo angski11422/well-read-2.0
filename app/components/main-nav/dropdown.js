@@ -16,7 +16,6 @@ import styles from "./dropdown.module.scss";
 
 export default function Dropdown() {
   const { data: session } = useSession();
-  console.log(session);
 
   if (session && session.user) {
     return (

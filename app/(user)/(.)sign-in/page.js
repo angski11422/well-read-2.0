@@ -1,12 +1,12 @@
 "use client";
 
-import styles from "./modal.module.scss";
-import { IoBookmark } from "react-icons/io5";
+import styles from "../sign-in/sign-in.module.scss";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { toast } from "react-hot-toast";
-import Modal from "./Modal";
+import Modal from "@/components/modal/Modal";
+import { IoBookmark } from "react-icons/io5";
 
 export default function SignInModal() {
   const router = useRouter();

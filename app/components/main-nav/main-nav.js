@@ -2,7 +2,7 @@ import Link from "next/link";
 
 import Logo from "./logo";
 import styles from "./main-nav.module.scss";
-import UserNav from "./user-nav";
+import Dropdown from "./dropdown";
 
 export default function MainNav() {
   return (
@@ -20,7 +20,7 @@ export default function MainNav() {
       </div>
       <div className={styles.usernav}>
         <div className={styles.usernav__iconbox}>
-          <UserNav />
+          <Dropdown />
         </div>
       </div>
     </header>
